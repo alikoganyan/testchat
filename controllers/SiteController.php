@@ -93,7 +93,7 @@ class SiteController extends Controller
             return json_encode(['success' => true]);
         }
         else {
-            return $this->render('index', ['messages' => Messages::find()->limit(10)->orderBy('created')->asArray()->all()]);
+            return $this->render('index', ['messages' => array_reverse(Messages::find()->limit(10)->orderBy('created DESC')->asArray()->all())]);
         }
     }
 
@@ -158,6 +158,6 @@ class SiteController extends Controller
     }
     
     public function actionGetMessages(){
-        return json_encode(['success' => true, 'message' => Messages::find()->limit(10)->orderBy('created')->asArray()->all()]);
+        return json_encode(['success' => true, 'message' => array_reverse(Messages::find()->limit(10)->orderBy('created DESC')->asArray()->all())]);
     }
 }

@@ -22,7 +22,7 @@ $(document).ready(function(){
         return false;
     });
 });
-/*
+
 setInterval(function(){
     $.ajax({
         url: 'index.php?r=site%2Fget-messages',
@@ -46,4 +46,3 @@ setInterval(function(){
     });
     return false;
 }, 3000);
-*/
